@@ -475,7 +475,11 @@ test("dom为空的情况",function(){
 });
 //end
 
-//准备工序
+test("dom为空的情况",function(){
+    //这个是人为的测试冲突
+});
+
+
 function prepareTest(){
 	var html = "<div id='body'>"+
 	"<!-- Test HTML -->"+
