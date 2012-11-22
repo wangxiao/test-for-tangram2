@@ -1,4 +1,4 @@
-module("baidu.dom.attr",{});
+﻿module("baidu.dom.attr",{});
 
 var bareObj = function(value) { return value; };
 var functionReturningObj = function(value) { return (function() { return value; }); };
@@ -468,18 +468,58 @@ test("attr('tabindex', value)", function() {
 });
 
 test("dom为空的情况",function(){
+
+
+
     var result = baidu("#baidujsxiaozu").attr('type');
+
     equal(result,undefined,'get方法');
+
+
     var result = baidu("#baidujsxiaozu").attr('type','wlkafjl');
-    ok(result,'有东西就行');
+    
+
+     ok(result,'有东西就行');
+
+
 });
 //end
+
+test("get first set all”原则",function(){
+
+    var getInpType = baidu("#form input").attr('type'), getFirInpType = baidu(baidu("#form input")[0]).attr('type');
+
+	baidu("#form input").attr('class','button');
+
+	var length1 = baidu('#form input[class="button"]').length, length2 = baidu('#form input').length, getLastInpType = baidu(baidu("#form input")[length2-1]).attr('type');
+
+	ok(getInpType===getFirInpType, 'get first');
+
+	ok(getInpType!=getLastInpType, 'not get last');
+
+	ok(length1===length2,' set all');
+
+});
+
+test("dataset",function(){
+
+	var result = baidu("#lengthtest").attr('data-name','myDiv').attr('data-name');
+	equal(result, 'myDiv', "先设置 data-name、再获取 data-name");
+
+});
+
+test("css className",function(){
+
+	var result = baidu("#nothiddendiv").attr('class');
+	equal(result, 'nothiddendiv test', "两个className");
+
+});
 
 //准备工序
 function prepareTest(){
 	var html = "<div id='body'>"+
 	"<!-- Test HTML -->"+
-	"<div id='nothiddendiv' style='height:1px;background:white;' class='nothiddendiv'>"+
+	"<div id='nothiddendiv' style='height:1px;background:white;' class='nothiddendiv test'>"+
 		"<div id='nothiddendivchild'></div>"+
 	"</div>"+
 	"<!-- this iframe is outside the #qunit-fixture so it won't reload constantly wasting time, but it means the tests must be 'safe' and clean up after themselves -->"+
