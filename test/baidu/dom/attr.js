@@ -1,4 +1,4 @@
-﻿module("baidu.dom.attr",{});
+module("baidu.dom.attr",{});
 
 var bareObj = function(value) { return value; };
 var functionReturningObj = function(value) { return (function() { return value; }); };
