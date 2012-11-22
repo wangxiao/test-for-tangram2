@@ -468,22 +468,11 @@ test("attr('tabindex', value)", function() {
 });
 
 test("dom为空的情况",function(){
-
-
-
     var result = baidu("#baidujsxiaozu").attr('type');
-
     equal(result,undefined,'get方法');
-
-
     var result = baidu("#baidujsxiaozu").attr('type','wlkafjl');
-    
-
-     ok(result,'有东西就行');
-
-
+    ok(result,'有东西就行');
 });
-//end
 
 test("get first set all”原则",function(){
 
@@ -514,6 +503,13 @@ test("css className",function(){
 	equal(result, 'nothiddendiv test', "两个className");
 
 });
+//end
+
+test("dom为空的情况",function(){
+    //这个是人为的测试冲突
+});
+
+
 
 //准备工序
 function prepareTest(){
