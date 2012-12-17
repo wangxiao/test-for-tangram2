@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="baidu.dom().isCrash() 示例" />
+		<title>判断两个元素是否相交</title>
+		<link rel="stylesheet" href="../../demos/public.css" type="text/css" />
+		<!--<script type="text/javascript" src="../../demos/tangram2.0-all.js"></script>-->
+        <script type="text/javascript" src="../../src/import.php?f=baidu.dom.isCrash"></script>
+	</head>
+	<body>
+		<style>
+            #demo-list {
+                border: 1px solid #ccc;
+                border-bottom: none;
+                width: 182px;
+                margin-left: 200px;
+            }
+			#demo-list li {
+			    line-height: 25px;
+                border-bottom: 1px solid #ccc;
+                width: 160px;
+                padding-left: 20px;
+			}
+
+            #demo_btn {
+                position: absolute;
+                top: 157px;
+                left:401px;
+            }
+
+		</style>
+		<div class="demo" id="demo">
+			<h1 class="ac-h1"><strong>baidu.dom().isCrash()</strong> 示例</h1>
+			<div class="pannel">
+				<div class="pannel-title">
+					<span>判断两个元素是否相交</span>
+				</div>
+				<div class="pannel-content">
+					<!--DemoViewStart-->
+                    <ul id="demo-list">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                    <a class="button" id="demo_btn">目标元素</a>
+					<div class="pannel-show">
+						运行结果：<span id="demo_execute_result"></span>
+					</div>
+					<!--DemoViewEnd-->
+				</div>
+			</div>
+		</div>
+		<script>
+            var a = baidu('li').isCrash('#demo_btn');
+            console.log(a);
+		</script>
+	</body>
+</html>
